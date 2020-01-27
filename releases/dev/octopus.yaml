@@ -13,10 +13,7 @@ spec:
     git: git@github.com:RonaldCrb/helm-operator-get-started
     path: charts/octopus-chart
     ref: master
-#  values:
-#    image:
-#      repository: stefanprodan/octopus
-#      tag: dev-hdtwcel9
-#    replicaCount: 1
-#    hpa:
-#      enabled: false
+  values:
+    image:
+      repository: ronaldcrb/octopus
+      tag: dev
