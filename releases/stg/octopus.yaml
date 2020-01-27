@@ -1,0 +1,25 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: octopus-rc
+  namespace: demo-staging
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/chart-image: glob:stg-*
+spec:
+  releaseName: octopus-rc
+  chart:
+    git: git@github.com:RonaldCrb/helm-operator-get-started
+    path: charts/octopus-chart
+    ref: master
+#  values:
+#    image:
+#      repository: stefanprodan/octopus
+#      tag: stg-9ij63o4c
+#    replicaCount: 2
+#    hpa:
+#      enabled: true
+#      maxReplicas: 10
+#      cpu: 50
+#      memory: 256Mi

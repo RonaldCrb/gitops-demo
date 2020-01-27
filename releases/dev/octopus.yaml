@@ -1,0 +1,22 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: octopus-dev
+  namespace: demo-dev
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/chart-image: glob:dev-*
+spec:
+  releaseName: octopus-dev
+  chart:
+    git: git@github.com:RonaldCrb/helm-operator-get-started
+    path: charts/octopus-chart
+    ref: master
+#  values:
+#    image:
+#      repository: stefanprodan/octopus
+#      tag: dev-hdtwcel9
+#    replicaCount: 1
+#    hpa:
+#      enabled: false

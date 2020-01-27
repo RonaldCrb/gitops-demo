@@ -1,0 +1,10 @@
+envVars: {}
+image:
+  pullPolicy: Always
+  repository: ronaldcrb/shark
+  tag: latest
+replicaCount: 1
+resources: {}
+service:
+  port: 3001
+  type: ClusterIP
