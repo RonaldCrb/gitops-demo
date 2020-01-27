@@ -1,0 +1,15 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: shark-dev
+  namespace: demo-dev
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/chart-image: glob:dev-*
+spec:
+  releaseName: shark-dev
+  chart:
+    git: git@github.com:RonaldCrb/helm-operator-get-started
+    path: charts/shark-chart
+    ref: master
