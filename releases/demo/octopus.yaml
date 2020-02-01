@@ -2,13 +2,13 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: octopus-dev
-  namespace: demo-dev
+  name: octopus
+  namespace: flux-demo
   annotations:
     fluxcd.io/automated: "true"
     filter.fluxcd.io/chart-image: glob:dev-*
 spec:
-  releaseName: octopus-dev
+  releaseName: octopus
   chart:
     git: git@github.com:RonaldCrb/helm-operator-get-started
     path: charts/octopus-chart
